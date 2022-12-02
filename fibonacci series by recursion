@@ -1,0 +1,41 @@
+// Fibonacci Series using Recursion
+#include <stdio.h>
+void printFibonacciNumbers(int n);
+int fib(int n)
+{
+	if (n <= 1)
+		return n;
+	return fib(n - 1) + fib(n - 2);
+}
+
+int main()
+{
+    
+    int n;
+     while(n!=999)
+   {
+       printf("Enter element for which you want fibonacci series: ");
+     	scanf("%d",&n);
+   
+	printf("%d\n", fib(n));
+	getchar();
+   printFibonacciNumbers( n);
+   }
+  
+	return 0;
+}
+
+void printFibonacciNumbers(int n)
+{
+    int f1 = 0, f2 = 1, i;
+ 
+    if (n < 1)
+        return;
+    printf("%d \n ", f1);
+    for (i = 1; i < n; i++) {
+        printf("%d \n", f2);
+        int next = f1 + f2;
+        f1 = f2;
+        f2 = next;
+    }
+}
